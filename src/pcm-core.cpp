@@ -108,6 +108,30 @@ extern "C" {
 	{
 		return getNumberOfCustomEvents(event_id, globalBeforeState[core_id], globalAfterState[core_id]);
 	}
+	uint64_t pcm_c_get_l2_hit(uint32_t core_id)
+	{
+		return getL2CacheHits(globalBeforeState[core_id], globalAfterState[core_id]);
+	};
+	uint64_t pcm_c_get_l2_misses(uint32_t core_id)
+	{
+		return getL2CacheMisses(globalBeforeState[core_id], globalAfterState[core_id]);
+	};
+	uint64_t pcm_c_get_l3_hit(uint32_t core_id)
+	{
+		return getL3CacheHits(globalBeforeState[core_id], globalAfterState[core_id]);
+	};
+	uint64_t pcm_c_get_l3_misses(uint32_t core_id)
+	{
+		return getL3CacheMisses(globalBeforeState[core_id], globalAfterState[core_id]);
+	};
+	uint64_t pcm_c_get_l3_hit_snoop(uint32_t core_id)
+	{
+		return getL3CacheHitsSnoop(globalBeforeState[core_id], globalAfterState[core_id]);
+	}
+	uint64_t pcm_c_get_l3_hit_nosnoop(uint32_t core_id)
+	{
+		return getL3CacheHitsNoSnoop(globalBeforeState[core_id], globalAfterState[core_id]);
+	}
 }
 
 void print_usage(const string & progname)
