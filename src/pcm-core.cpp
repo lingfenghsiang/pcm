@@ -132,6 +132,11 @@ extern "C" {
 	{
 		return getL3CacheHitsNoSnoop(globalBeforeState[core_id], globalAfterState[core_id]);
 	}
+	uint32_t pcm_c_get_cpu_num()
+	{
+		PCM *m = PCM::getInstance();
+		return m->getNumCores();
+	}
 }
 
 void print_usage(const string & progname)
